@@ -7,4 +7,10 @@ apt_repository 'knot_dns' do
 end
 
 package node[self.cookbook_name][:apt_repo][:pkg_name] do
+  version node[:knot_dns][:apt_repo][:version]
+end
+
+service node[self.cookbook_name][:apt_repo][:pkg_name] do
+  supports :status => true, :restart => true, :reload => true
+  action [ :enable, :start ]
 end
