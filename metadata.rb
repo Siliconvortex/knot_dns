@@ -12,4 +12,3 @@ end
 
 depends 'iptables', '>= 0.12.0'
 depends 'apt', '>= 2.3.8'
-depends 'zonefile', '>= 0.9.2'
